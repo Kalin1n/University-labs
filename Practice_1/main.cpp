@@ -66,9 +66,10 @@ void DeleteIf(vector<Long> &data) {
     double leftN, rightN;
     std::cout << "Enter range of values to delete:" << std::endl;
     std::cin >> leftN >> rightN;
-    std::remove_if(data.begin(), data.end(), [&](Long element) {
-        return ((element.getCentimeters() >= leftN) && (element.getCentimeters() <= rightN));
-    });
+    data.erase(std::remove_if(data.begin(), data.end(), [&](Long element) {
+                   return ((element.getCentimeters() >= leftN) && (element.getCentimeters() <= rightN));
+               }),
+               data.end());
 }
 
 void doubleElement(Long &_long) {

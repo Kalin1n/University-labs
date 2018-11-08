@@ -48,7 +48,7 @@ public:
     Task(int n = 0) {
         size = n;
         array.resize(size);
-    }
+}
 
     void solve() {
         input();
